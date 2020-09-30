@@ -1,0 +1,22 @@
+kind: "Deployment"
+apiVersion: "apps/v1"
+metadata:
+  name: "myapp1"
+spec:
+  selector:
+    matchLabels: 
+      name: "myapp1"
+  template: 
+    metadata:
+      labels:
+        name: "myapp1"      
+        app: "myapp1"
+    spec:
+      containers:
+        - name: "myapp1"
+          image: "seberino/apache2:1.0"
+          ports:
+            - containerPort: 80
+              name: "porta1"
+              protocol: TCP
+  replicas: 1 
