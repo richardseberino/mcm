@@ -1,0 +1,25 @@
+kind: "Deployment"
+apiVersion: "apps/v1"
+metadata:
+  namespace: app1
+  name: "nginx-test-pl"
+  labels:
+    app: nginx-test-pl
+spec:
+  selector:
+    matchLabels:
+      name: "nginx-test-pl"
+  template:
+    metadata:
+      labels:
+        name: "nginx-test-pl"
+        app: nginx-test-pl
+    spec:
+      containers:
+        - name: "nginx-test"
+          image: "nginx:1.7.9"
+          ports:
+            - containerPort: 80
+              name: "porta1"
+              protocol: TCP
+  replicas: 1
