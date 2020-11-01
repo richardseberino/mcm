@@ -4,7 +4,7 @@ metadata:
   namespace: app1
   name: "nginx-test-pl"
   labels:
-    app: nginx-test-pl
+    app: myapp1
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         name: "nginx-test-pl"
-        app: nginx-test-pl
+        app: myapp1
     spec:
       containers:
         - name: "nginx-test"

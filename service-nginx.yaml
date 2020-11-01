@@ -5,7 +5,7 @@ metadata:
   namespace: app1
   labels:
     name: nginx-test-pl
-    app: nginx-test-pl
+    app: myapp1
 spec:
   type: NodePort
   ports:
@@ -15,4 +15,4 @@ spec:
     nodePort: 31080
     targetPort: 80
   selector:
-    app:  nginx-test-pl
+    name:  nginx-test-pl
