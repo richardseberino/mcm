@@ -1,0 +1,23 @@
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+    - ldap:
+        attributes:
+          email: []
+          id:
+            - uid
+          name:
+            - cn
+          preferredUsername:
+            - uid
+        bindDN: 'cn=admin,dc=seberino,dc=com,dc=br'
+        bindPassword:
+          name: ldap-bind-password
+        insecure: true
+        url: 'ldap://bastion.seberino.com.br/dc=seberino,dc=com,dc=br?uid'
+      mappingMethod: claim
+      name: ldap
+      type: LDAP
